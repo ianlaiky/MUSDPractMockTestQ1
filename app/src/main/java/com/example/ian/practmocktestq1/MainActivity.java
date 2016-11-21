@@ -1,5 +1,6 @@
 package com.example.ian.practmocktestq1;
 
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -17,6 +18,9 @@ public class MainActivity extends AppCompatActivity {
     String phone;
     String gender;
 
+    boolean g1;
+    boolean g2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -24,10 +28,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button submit = (Button) findViewById(R.id.submit);
-        final EditText text1 = (EditText) findViewById(R.id.text1);
+        final EditText text1 = (EditText) findViewById(R.id.edittext1);
         final EditText text2 = (EditText) findViewById(R.id.textphone);
         final RadioGroup rad = (RadioGroup) findViewById(R.id.radiogrp);
         final TextView te = (TextView) findViewById(R.id.textreg);
+
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,23 +41,16 @@ public class MainActivity extends AppCompatActivity {
                 name = text1.getText().toString();
                 phone = text2.getText().toString();
 
+                g1 = ((RadioButton) findViewById(R.id.rad1)).isChecked();
+                g2 = ((RadioButton) findViewById(R.id.rad2)).isChecked();
 
-               if(rad.getCheckedRadioButtonId()!=-1){
-
-
-                   gender = findViewById(rad.getCheckedRadioButtonId()).toString();
-
+                // gender = ((RadioButton)rad.findViewById(rad.getCheckedRadioButtonId())).getText().toString();
 
 
-
-               }
-
-                te.setText(name+" "+phone+" "+gender);
+                te.setText(name + "," + phone + "," + "," + g1 + "," + g2);
 
             }
         });
-
-
 
 
     }
