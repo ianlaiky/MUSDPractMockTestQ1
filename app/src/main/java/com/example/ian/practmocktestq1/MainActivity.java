@@ -41,10 +41,16 @@ public class MainActivity extends AppCompatActivity {
                 name = text1.getText().toString();
                 phone = text2.getText().toString();
 
+                //check true or false for each radio btn
                 g1 = ((RadioButton) findViewById(R.id.rad1)).isChecked();
                 g2 = ((RadioButton) findViewById(R.id.rad2)).isChecked();
 
+
+
+
+                //print male or female
                 // gender = ((RadioButton)rad.findViewById(rad.getCheckedRadioButtonId())).getText().toString();
+
 
 
                 te.setText(name + "," + phone + "," + "," + g1 + "," + g2);
