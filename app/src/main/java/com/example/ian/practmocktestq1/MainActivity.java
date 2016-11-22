@@ -15,7 +15,7 @@ import org.w3c.dom.Text;
 public class MainActivity extends AppCompatActivity {
 
     String name;
-    String phone;
+    int phone;
     String gender;
 
     boolean g1;
@@ -39,7 +39,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 name = text1.getText().toString();
-                phone = text2.getText().toString();
+                phone = parseInt(text2.getText().toString());
+
 
                 //check true or false for each radio btn
                 g1 = ((RadioButton) findViewById(R.id.rad1)).isChecked();
