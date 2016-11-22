@@ -12,6 +12,8 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import static java.lang.Integer.parseInt;
+
 public class MainActivity extends AppCompatActivity {
 
     String name;
@@ -30,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         Button submit = (Button) findViewById(R.id.submit);
         final EditText text1 = (EditText) findViewById(R.id.edittext1);
         final EditText text2 = (EditText) findViewById(R.id.textphone);
-        final RadioGroup rad = (RadioGroup) findViewById(R.id.radiogrp);
+       final RadioGroup rad = (RadioGroup) findViewById(R.id.radiogrp);
         final TextView te = (TextView) findViewById(R.id.textreg);
 
 
@@ -39,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 name = text1.getText().toString();
+
                 phone = parseInt(text2.getText().toString());
 
 
@@ -50,11 +53,11 @@ public class MainActivity extends AppCompatActivity {
 
 
                 //print male or female
-                // gender = ((RadioButton)rad.findViewById(rad.getCheckedRadioButtonId())).getText().toString();
+                 gender = ((RadioButton)rad.findViewById(rad.getCheckedRadioButtonId())).getText().toString();
 
 
 
-                te.setText(name + "," + phone + "," + "," + g1 + "," + g2);
+                te.setText(name + "," + phone + "," + g1 + "," + g2+","+gender);
 
             }
         });

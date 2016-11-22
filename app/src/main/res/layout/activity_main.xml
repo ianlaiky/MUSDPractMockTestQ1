@@ -37,6 +37,7 @@
         android:layout_height="wrap_content"
         android:hint="Enter your phone number"
         android:layout_below="@+id/text2"
+        android:inputType="phone"
         />
 
   <RadioGroup
@@ -76,7 +77,7 @@
 
     <TextView
         android:id="@+id/textreg"
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Press Register to proceed"
         android:layout_below="@+id/submit"
